@@ -1,0 +1,119 @@
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cognitiva</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="http://localhost:3000/public/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:3000/public/assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://localhost:3000/public/assets/css/form-elements.css">
+        <link rel="stylesheet" href="http://localhost:3000/public/assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="icon" type="image/png" href="http://localhost:3000/public/assets/img/Cognitiva_logo_negro.jpg">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:3000/public/assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:3000/public/assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:3000/public/assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="http://localhost:3000/public/assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+                <!-- Top content -->
+        <div class="top-content">
+            
+            <div class="inner-bg">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Cognitiva</strong> Administrador de Chit Chat</h1>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row text-center">
+                        <div class="col-sm-5">
+                            
+                            <div class="form-box pull-center">
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>Registro</h3>
+                                        <p>{{Message}}</p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <form role="form" action="/" method="post" class="registration-form">
+                                        <button type="submit" class="btn">Volver</button>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+        	<div class="container">
+        		<div class="row">
+        			
+        			<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>
+                        Tars <strong>Cognitiva</strong>
+        				</p>
+        			</div>
+        			
+        		</div>
+        	</div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="http://localhost:3000/public/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="http://localhost:3000/public/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="http://localhost:3000/public/assets/js/jquery.backstretch.min.js"></script>
+        <script src="http://localhost:3000/public/assets/js/scripts.js"></script>
+
+
+        <script>
+            function goApp() {
+                var user = document.getElementById("user").value;
+                var topic = document.getElementById("topic").value;
+                var train_id = document.getElementById("train_id").value;
+                if ( !user || !topic || !train_id) {
+                    alert("Empty user, topic or train_id.");
+                } else {
+                    window.location = "trainview.html?user=" + user + "&topic=" + topic + "&train_id=" + train_id; 
+                }
+            }
+</script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
