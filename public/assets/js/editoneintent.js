@@ -60,7 +60,7 @@ function Get_Variations(){
 function edit_rowVariations(no)
 {
  document.getElementById("edit_button"+no).style.display="none";
- document.getElementById("save_button"+no).style.display="block";
+ document.getElementById("save_button"+no).style.display="inline";
  var variation=document.getElementById("variation_row"+no);
  var variation_data=variation.innerHTML;
  variation.innerHTML="<input type='text' class='form-control' placeholder='Editar' id='variation_text"+no+"' value='"+variation_data+"'>";
@@ -71,7 +71,7 @@ function save_rowVariations(no)
 {
  var variation_val=document.getElementById("variation_text"+no).value;
  document.getElementById("variation_row"+no).innerHTML=variation_val;
- document.getElementById("edit_button"+no).style.display="block";
+ document.getElementById("edit_button"+no).style.display="inline";
  document.getElementById("save_button"+no).style.display="none";
 }
 
@@ -91,6 +91,7 @@ function add_rowVariations()
  var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='variation_row"+table_len+"'>"+new_variation+"</td><td><a id='edit_button"+table_len+"' class='edit' onclick='edit_rowVariations("+table_len+")'><i class='pe-7s-pen'></i></a> <a id='save_button"+table_len+"' class='save' onclick='save_rowVariations("+table_len+")'><i class='pe-7s-diskette'></i></a> <a class='delete' onclick='delete_rowVariations("+table_len+")'><i class='pe-7s-trash'></i></a></td></tr>";
  var outputVariation = table_len;
  document.getElementById("new_variation").value="";
+ document.getElementById("save_button"+table_len).style.display="none";
 }
 
 
@@ -103,6 +104,7 @@ function CreateAnswers(){
  			var table_len=(table.rows.length)-1;
  			var row = table.insertRow(table_len).outerHTML="<tr id='Ansrow"+table_len+"'><td class='text-center' id='Answer_row_Answer"+table_len+"'>"+MIntents.Answers[i].Answer+"</td><td class='text-center' id='Answer_row_Irony"+table_len+"'>"+MIntents.Answers[i].Irony+"</td><td class='text-center' id='Answer_row_Formal"+table_len+"'>"+MIntents.Answers[i].Formal+"</td><td class='text-center' id='Answer_row_Humor"+table_len+"'>"+MIntents.Answers[i].Humor+"</td><td class='text-center' id='Answer_row_Actions"+table_len+"'><a class='delete' onclick='delete_rowAnswer("+table_len+")'><i class='pe-7s-trash'></i></a><a id='answer_edit_button"+table_len+"' class='edit' onclick='edit_rowAnswer_table("+table_len+")'><i class='pe-7s-pen'></i></a><a id='answer_save_button"+table_len+"' class='save' onclick='save_rowAnswer_table("+table_len+")'><i class='pe-7s-diskette'></i></a><a id='tars_recomend_button"+table_len+"' class='magic'><i class='pe-7s-magic-wand'></i></a></td></tr>";
  			var outputAnswer = table_len;
+      document.getElementById("answer_save_button"+table_len).style.display="none";
    		}
 }
 
@@ -130,6 +132,8 @@ function add_rowAnswer()
  document.getElementById("rangeIrony").value=50;
  document.getElementById("rangeFormal").value=50;
  document.getElementById("rangeHumor").value=50;
+ document.getElementById("answer_save_button"+table_len).style.display="none";
+
 
 }
 
@@ -138,7 +142,7 @@ function edit_rowAnswer_table(no)
 {
 	// Cambia el style para que se haga dinámico la muestra de botones 
     document.getElementById("answer_edit_button"+no).style.display="none";
-    document.getElementById("answer_save_button"+no).style.display="block";
+    document.getElementById("answer_save_button"+no).style.display="inline";
     // Se obtienen los elementos de la respuesta al hacerle click editar 
     var Answer=document.getElementById("Answer_row_Answer"+no);
     var Irony=document.getElementById("Answer_row_Irony"+no);
@@ -170,7 +174,7 @@ function save_rowAnswer_table(no)
  var Humor_val=document.getElementById("Humor_text"+no).value;
  document.getElementById("Answer_row_Humor"+no).innerHTML=Humor_val;
 
- document.getElementById("answer_edit_button"+no).style.display="block";
+ document.getElementById("answer_edit_button"+no).style.display="inline";
  document.getElementById("answer_save_button"+no).style.display="none";
 }
 

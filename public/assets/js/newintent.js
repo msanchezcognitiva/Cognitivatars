@@ -3,7 +3,7 @@
 function edit_rowVariations(no)
 {
  document.getElementById("edit_button"+no).style.display="none";
- document.getElementById("save_button"+no).style.display="block";
+ document.getElementById("save_button"+no).style.display="inline";
     
  var variation=document.getElementById("variation_row"+no);
  var variation_data=variation.innerHTML;    
@@ -15,7 +15,7 @@ function save_rowVariations(no)
 {
  var variation_val=document.getElementById("variation_text"+no).value;
  document.getElementById("variation_row"+no).innerHTML=variation_val;
- document.getElementById("edit_button"+no).style.display="block";
+ document.getElementById("edit_button"+no).style.display="inline";
  document.getElementById("save_button"+no).style.display="none";
 }
 
@@ -34,6 +34,7 @@ function add_rowVariations()
  var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='variation_row"+table_len+"'>"+new_variation+"</td><td><a id='edit_button"+table_len+"' class='edit' onclick='edit_rowVariations("+table_len+")'><i class='pe-7s-pen'></i></a> <a id='save_button"+table_len+"' class='save' onclick='save_rowVariations("+table_len+")'><i class='pe-7s-diskette'></i></a> <a class='delete' onclick='delete_rowVariations("+table_len+")'><i class='pe-7s-trash'></i></a></td></tr>";
  var outputVariation = table_len;
  document.getElementById("new_variation").value="";
+ document.getElementById("save_button"+table_len).style.display="none";
 
 }
 
@@ -79,6 +80,8 @@ function add_rowAnswer()
  document.getElementById("rangeIrony").value=new_Irony;
  document.getElementById("rangeFormal").value=new_Formal;
  document.getElementById("rangeHumor").value=new_Humor;
+ document.getElementById("answer_save_button"+table_len).style.display="none";
+
 
 }
 
@@ -86,7 +89,7 @@ function add_rowAnswer()
 function edit_rowAnswer_table(no)
 {
     document.getElementById("answer_edit_button"+no).style.display="none";
-    document.getElementById("answer_save_button"+no).style.display="block";
+    document.getElementById("answer_save_button"+no).style.display="inline";
     
     var Answer=document.getElementById("Answer_row_Answer"+no);
     var Irony=document.getElementById("Answer_row_Irony"+no);
@@ -123,7 +126,7 @@ function save_rowAnswer_table(no)
  document.getElementById("Answer_row_Humor"+no).innerHTML=Humor_val;
 
 
- document.getElementById("answer_edit_button"+no).style.display="block";
+ document.getElementById("answer_edit_button"+no).style.display="inline";
  document.getElementById("answer_save_button"+no).style.display="none";
 }
 
